@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TextController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SalesController;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,4 +16,8 @@ use App\Http\Controllers\TextController;
 */
 
 
-Route::get('/', [TextController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/log', [HomeController::class, 'login_index'])->name('log.index');
+Route::get('/login', [HomeController::class, 'login_request'])->name('log.request');
+Route::get('/sales', [SalesController::class, 'index'])->name('sales.index');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');

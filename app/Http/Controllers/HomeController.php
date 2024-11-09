@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class TextController extends Controller
+class HomeController extends Controller
 {
     public function index()
     {
@@ -14,5 +14,16 @@ class TextController extends Controller
 
     // 傳遞資料到 'index' 視圖
     return view('index', compact('items'));
+    }
+
+    public function login_index()
+    {
+    // 傳遞資料到 'index' 視圖
+    return view('login');
+    }
+    public function login_request()
+    {
+    // 傳遞資料到 'index' 視圖
+    return redirect()->action([HomeController::class, 'index']);
     }
 }
